@@ -29,11 +29,4 @@
 // Actions
 - (IBAction)btnAddRemoveChapter:(id)sender;
 
-
-
-
-
-
-
-
 @end

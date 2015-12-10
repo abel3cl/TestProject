@@ -36,7 +36,6 @@
 }
 
 #pragma mark - DataSource and Delegate of UITableView
-// DataSource and delegate UITableView ----------------------------------------------------------------//
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [_arrayOfBooks count];
