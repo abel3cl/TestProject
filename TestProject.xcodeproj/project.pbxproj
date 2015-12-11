@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EC736C31C1ADFE700A9EF32 /* libPods-TestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABB4463177CD82FDD856BC0 /* libPods-TestProject.a */; settings = {ASSET_TAGS = (); }; };
 		8B3EDFC660C8F7BDA2A8CF58 /* libPods-TestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABB4463177CD82FDD856BC0 /* libPods-TestProject.a */; };
 		B56696771C19C9320033152C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B56696761C19C9320033152C /* main.m */; };
 		B566967A1C19C9320033152C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B56696791C19C9320033152C /* AppDelegate.m */; };
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC736C31C1ADFE700A9EF32 /* libPods-TestProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +535,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TestProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abelTest.TestProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -545,6 +548,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TestProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abelTest.TestProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -151,7 +151,7 @@
                 
                 
                 for (int i = 0; i < 600; i++) {
-                    NSLog(@"%u",i);
+                    //NSLog(@"%u",i);
                     hud.progress = i/600.0;
                 }
                 
