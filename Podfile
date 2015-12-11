@@ -8,7 +8,7 @@ pod 'MBProgressHUD'
 end
 
 target 'TestProjectTests' do
-
+pod 'MBProgressHUD'
 end
 
 target 'TestProjectUITests' do
