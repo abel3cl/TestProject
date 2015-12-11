@@ -7,9 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "BooksViewController.h"
 
 @interface TestProjectTests : XCTestCase
-
+{
+    BooksViewController *booksVC;
+}
 @end
 
 @implementation TestProjectTests
@@ -17,6 +20,7 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    booksVC = [[BooksViewController alloc] init];
 }
 
 - (void)tearDown {
