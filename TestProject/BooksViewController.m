@@ -15,6 +15,7 @@
 @implementation BooksViewController
 {
     MBProgressHUD *hud;
+    BOOL keyboardOnScreen;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -317,15 +318,18 @@
 
 -(void) keyboarWillShowNotification: (NSNotification*) notification
 {
+    
     NSDictionary *info = notification.userInfo;
     
     __weak BooksViewController *weakSelf = self;
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        CGRect frameView = weakSelf.view.frame;
-        frameView.origin.y -= 253.0;
-        weakSelf.view.frame = frameView;
-    }];
+    if (!keyboardOnScreen) {
+        keyboardOnScreen = YES;
+        [UIView animateWithDuration:0.5 animations:^{
+            CGRect frameView = weakSelf.view.frame;
+            frameView.origin.y -= 253.0;
+            weakSelf.view.frame = frameView;
+        }];
+    }
 }
 
 
@@ -336,6 +340,7 @@
     __weak BooksViewController *weakSelf = self;
     
     [UIView animateWithDuration:0.5 animations:^{
+        keyboardOnScreen = NO;
         CGRect frameView = weakSelf.view.frame;
         frameView.origin.y = 0;
         weakSelf.view.frame = frameView;

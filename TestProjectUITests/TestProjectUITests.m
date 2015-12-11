@@ -110,7 +110,7 @@
     [returnButton tap];
     
     NSUInteger count = app.tables[@"tableOfBooks"].cells.count;
-    [app.buttons[@"Add Chapter"] tap];
+    [app.buttons[@"addChapter"] tap];
     
     XCTAssertEqual(app.tables[@"tableOfBooks"].cells.count, (count + 1));
 }
@@ -120,7 +120,8 @@
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [self testAddChapter];
     
-    XCTAssert(app.buttons[@"Add Chapter"].exists);
+    XCTAssert(app.buttons[@"addChapter"].exists);
+    
     [app.switches[@"1"] tap];
     XCTAssert(app.buttons[@"Remove Chapter"].exists);
     
