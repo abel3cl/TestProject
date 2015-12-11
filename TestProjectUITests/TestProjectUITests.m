@@ -32,14 +32,14 @@
     
     XCUIElement *returnButton = app.buttons[@"Return"];
     [returnButton tap];
-    
-    XCUIElement *textField2 = [app.textFields elementBoundByIndex:1];
-    [textField2 tap];
-    
-    XCUIElement *moreNumbersKey = app.keys[@"more, numbers"];
-    [moreNumbersKey tap];
-    [textField2 typeText:@"123"];
-    [returnButton tap];
+//    
+//    XCUIElement *textField2 = [app.textFields elementBoundByIndex:1];
+//    [textField2 tap];
+//    
+//    XCUIElement *moreNumbersKey = app.keys[@"more, numbers"];
+//    [moreNumbersKey tap];
+//    [textField2 typeText:@"123"];
+//    [returnButton tap];
     [app.steppers.buttons[@"Increment"] tap];
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
@@ -64,14 +64,14 @@
     XCUIElement *returnButton = app.buttons[@"Return"];
     [returnButton tap];
     
-    XCUIElement *textField2 = [[titleElementsQuery childrenMatchingType:XCUIElementTypeTextField] elementBoundByIndex:1];
-    [textField2 tap];
-    
-    XCUIElement *moreNumbersKey = app.keys[@"more, numbers"];
-    [moreNumbersKey tap];
-    [textField2 typeText:@"123"];
-    [returnButton tap];
-    
+//    XCUIElement *textField2 = [[titleElementsQuery childrenMatchingType:XCUIElementTypeTextField] elementBoundByIndex:1];
+//    [textField2 tap];
+//    
+//    XCUIElement *moreNumbersKey = app.keys[@"more, numbers"];
+//    [moreNumbersKey tap];
+//    [textField2 typeText:@"123"];
+//    [returnButton tap];
+//    
     [app.steppers.buttons[@"Increment"] tap];
     
 }
@@ -142,6 +142,23 @@
     
     XCTAssert(app.staticTexts[@"titleOfBook"].exists);
     
+    
+}
+
+-(void) testNotValidChapter
+{
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"hunger games"] tap];
+    [app.textFields[@"titleBook"] tap];
+    [app.textFields[@"titleBook"] typeText:@"capter"];
+    [app typeText:@"\n"];
+    
+    XCUIElement *textField = [[[app.otherElements containingType:XCUIElementTypeTable identifier:@"tableOfBooks"] childrenMatchingType:XCUIElementTypeTextField] elementBoundByIndex:1];
+    [textField tap];
+    [textField typeText:@"wer"];
+    [app typeText:@"\n"];
+    [app.buttons[@"addChapter"] tap];
+    [app.alerts[@"ERROR"].collectionViews.buttons[@"OK"] tap];
     
 }
 
